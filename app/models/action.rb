@@ -8,9 +8,10 @@ class Action < ApplicationRecord
   validates :kind, :created_at, presence: true
 
   scope :of_user, ->(user) { where(user_id: user.id) }
-  scope :of_kind, ->(kind) { where(kind: kind) }
   scope :of_book, ->(book) { where(book_id: book.id) }
   scope :order_by_newest, -> { order(:created_at, :id) }
+  scope :borrows, -> { where(kind: :borrow) }
+  scope :returns, -> { where(kind: :return) }
 
   def borrow?
     self.kind.to_sym == :borrow

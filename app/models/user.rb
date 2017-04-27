@@ -1,19 +1,17 @@
 class User < ApplicationRecord
   acts_as_paranoid
 
+  before_destroy :if => :has_borrowed_books? { raise HasBorrowedBooks }
   validates :name, presence: true
-  before_destroy :abort_having_checked_out_books
-
-  def checked_out_books
-    Action.where(user_id: self.id, kind: :checkout)
-  end
 
 private
 
-  def abort_having_checked_out_books
-    raise HasCheckedOutBooks if checked_out_books.any?
+  def has_borrowed_books?
+    borrowed_books_ids = Action.of_user(self).of_kind(:borrow).pluck(:book_id)
+    returned_books_ids = Action.of_user(self).of_kind(:return).pluck(:book_id)
+    (borrowed_books_ids - returned_books_ids).any?
   end
 
 end
 
-class HasCheckedOutBooks < StandardError; end
+class HasBorrowedBooks < StandardError; end

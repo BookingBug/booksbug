@@ -1,15 +1,15 @@
 class Section < ApplicationRecord
   acts_as_paranoid
 
-  validates :name, presence: true
   has_many :books
 
-  before_destroy :abort_having_books
+  validates :name, presence: true
+  before_destroy :if => :has_books? { raise SectionHasBooksError }
 
 private
 
-  def abort_having_books
-    raise SectionHasBooksError if self.books.any?
+  def has_books?
+    self.books.any?
   end
 
 end

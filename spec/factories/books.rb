@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :book do
-    title "MyString"
-    section_id 1
+    title { Faker::Book.title }
+    author { Faker::Book.author }
+    section { create(:section) }
   end
 end

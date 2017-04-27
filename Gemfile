@@ -4,11 +4,8 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
 gem 'rails', '5.1.0.rc2'
-
 gem 'mysql2', '~> 0.3.21'
-
 gem 'puma'
 gem 'representable'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -23,6 +20,7 @@ gem 'representable'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'responders'
 gem 'multi_json'
+gem 'paranoia'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

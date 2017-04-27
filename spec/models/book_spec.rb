@@ -1,37 +1,26 @@
 require 'rails_helper'
 
-RSpec.describe Book do
+RSpec.describe Book, type: :model do
 
-  #let(:book) { create(:book) }
+  let(:book) { create(:book) }
 
-  it 'has a valid title' do
-    # book.title = ''
-    # expect(book).to be_invalid
-  end
+  context 'when validating' do
 
-  it 'belongs to a section' do
-  end
-
-  it 'can be deleted' do
-  end
-
-  context 'while borrowed' do
-
-    it 'cannot be borrowed' do
+    it 'has a title' do
+      book.title = ''
+      expect(book).to be_invalid
     end
 
-    it 'can be returned' do
+    it 'has an author' do
+      book.author = ''
+      expect(book).to be_invalid
     end
 
-  end
-
-  context 'while not borrowed' do
-
-    it 'can be borrowed' do
+    it 'belongs to a section' do
+      book.section = nil
+      expect(book).to be_invalid
     end
 
   end
-
-
 
 end

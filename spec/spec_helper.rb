@@ -107,7 +107,7 @@ RSpec.configure do |config|
                                     # :json, CustomFormatterClass
 
   config.before(:suite) do
-    DatabaseCleaner.strategy = :deletion
+    DatabaseCleaner.strategy = :truncation
     DatabaseCleaner.clean_with(:truncation)
   end
 

@@ -2,8 +2,9 @@ class CreateBooks < ActiveRecord::Migration[5.1]
   def change
     create_table :books do |t|
       t.string :title
-      t.integer :section_id
-
+      t.string :author
+      t.references :section
+      t.string :deleted_at
       t.timestamps
     end
   end

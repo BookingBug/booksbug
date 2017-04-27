@@ -4,12 +4,14 @@ class Section < ApplicationRecord
   validates :name, presence: true
   has_many :books
 
-  before_destroy :has_books?
+  before_destroy :abort_having_books
 
 private
 
-  def has_books?
-    throw(:abort) if self.books.any?
+  def abort_having_books
+    raise SectionHasBooksError if self.books.any?
   end
 
 end
+
+class SectionHasBooksError < StandardError; end

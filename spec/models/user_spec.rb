@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
 
   let(:user) { create(:user) }
-
+  
   context 'when validating' do
 
     it 'has a name' do
@@ -16,11 +16,11 @@ RSpec.describe User, type: :model do
   context 'when it has checked-out books' do
 
     before do
-      allow(user).to receive(:checked_out_books) { build_list(:books, 2) }
+      create(:action, book: create(:book), user: user, kind: :checkout)
     end
 
     it 'cannot be deleted' do
-      expect{ user.destroy! }.to raise_error{ ActiveRecord::RecordNotDestroyed }
+      expect{ user.destroy! }.to raise_error(HasCheckedOutBooks)
     end
 
   end

@@ -28,7 +28,7 @@ RSpec.describe 'Section', type: :model do
     end
 
     it 'cannot be deleted' do
-      expect{ section.destroy! }.to raise_error{ ActiveRecord::RecordNotDestroyed }
+      expect{ section.destroy! }.to raise_error(SectionHasBooksError)
     end
 
   end

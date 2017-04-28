@@ -3,10 +3,10 @@
 # RSpec.describe 'Sections Requests', type: :request do
 
 #   it 'returns a list of all sections' do
-#     create_list(:section, 3)
+#     create_list(:section, 2)
 #     get '/api/v1/sections'
 #     expect(response).to be_success
-#     expect(json.length).to eq(3)
+#     expect(json.length).to eq(2)
 #   end
 
 #   it 'creates a section' do
@@ -30,10 +30,10 @@
 
 #   it 'lists books by section' do
 #     section = create(:section)
-#     create_list(:book, 3, section: section)
+#     create_list(:book, 2, section: section)
 #     get '/api/v1/sections/#{section.name}/books'
 #     expect(response).to be_success
-#     expect(json.length).to eq(3)
+#     expect(json.length).to eq(2)
 #   end
 
 # end

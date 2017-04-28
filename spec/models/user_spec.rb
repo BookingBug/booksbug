@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
 
   end
 
-  context 'when it has checked-out books' do
+  context 'when it has borrowed books' do
 
     let (:moby_dick) { create(:book, title: 'Moby Dick') }
     let (:blue_lagoon) { create(:book, title: 'Blue Lagoon') }
@@ -30,7 +30,7 @@ RSpec.describe User, type: :model do
 
   end
 
-  context 'when it has no checked out books' do
+  context 'when it has no borrowed books' do
 
     it 'can be deleted' do
       expect{ bob.destroy! }.to change{ bob.deleted? }.from(false).to(true)

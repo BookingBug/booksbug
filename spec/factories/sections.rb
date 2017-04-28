@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :section do
-    name 'mistery'
+    name { Faker::Book.genre }
   end
 end

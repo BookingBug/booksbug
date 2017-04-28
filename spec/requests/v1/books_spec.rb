@@ -1,6 +1,7 @@
 # require 'rails_helper'
 
 # RSpec.describe 'Books Requests', type: :request do
+#   skip
 
 #   let (:book) { create(:book) }
 
@@ -37,10 +38,6 @@
 #   it 'deletes a book' do
 #     book = create(:book)
 #     expect { delete "/api/v1/books/#{book.id}" }.to change{ book.deleted? }.from(false).to(true)
-#   end
-
-#   it 'finds a book by title' do
-#     skip
 #   end
 
 # end

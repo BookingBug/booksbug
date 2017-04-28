@@ -7,15 +7,7 @@ class User < ApplicationRecord
 private
 
   def has_borrowed_books?
-    (borrowed_books_ids - returned_books_ids).any?
-  end
-
-  def borrowed_books_ids
-    actions.borrows.pluck(:book_id)
-  end
-
-  def returned_books_ids
-    actions.returns.pluck(:book_id)
+    actions.borrows.count > actions.returns.count
   end
 
   def actions

@@ -16,24 +16,22 @@ RSpec.describe BooksController, type: :controller do
     end
 
     context "book exists" do
-      it "returns array containing all book" do
-        Book.create!(title: 'Foo two')
-        Book.create!(title: 'Bar')
-
+      it "returns list of books" do
+        books = Book.create([{ title: 'foo one' }, { title: 'foo two' }])
         get :index
 
         response_body = JSON.parse(response.body)
-        expect(response_body.count).to eq Book.count
+        expect(response_body.count).to eq books.count
       end
 
-      describe "response array item" do
+      describe "response an item" do
         before do
           Book.create!(title: 'Bar')
 
           get :index
         end
 
-        it "will have a author" do
+        it "will have an author" do
           response_body = JSON.parse(response.body)
           book = response_body.first
           expect(book.has_key?('author')).to be true
@@ -45,7 +43,7 @@ RSpec.describe BooksController, type: :controller do
           expect(book.has_key?('title')).to be true
         end
 
-        it "will have a isbn" do
+        it "will have an isbn" do
           response_body = JSON.parse(response.body)
           book = response_body.first
           expect(book.has_key?('isbn')).to be true

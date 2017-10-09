@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 10.times do
   user = FactoryGirl.create(:user, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-  FactoryGirl.create(:book, title: Faker::Book.title, author: Faker::Book.author, isbn: Faker::Code.isbn, owner: user)
+  FactoryGirl.create(:book, title: Faker::Book.title, author: Faker::Book.author, isbn: Faker::Code.isbn)
 end

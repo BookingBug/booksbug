@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :book do
     title Faker::Book.title
-    owner nil
+    # owner nil
   end
 end

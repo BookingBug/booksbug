@@ -24,7 +24,7 @@ RSpec.describe BooksController, type: :controller do
         expect(response_body.count).to eq books.count
       end
 
-      describe "response an item" do
+      describe "response item" do
         before do
           Book.create!(title: 'Bar')
 

@@ -1,0 +1,81 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 1,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "3ZHD9wdspXgC",
+      "etag": "smPdWx40yYQ",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/3ZHD9wdspXgC",
+      "volumeInfo": {
+        "title": "A Guide to Remembering Japanese Characters",
+        "authors": [
+          "Kenneth G. Henshall"
+        ],
+        "publisher": "Tuttle Publishing",
+        "publishedDate": "1988",
+        "description": "Master mnemonic aids for all 1,945 joyo kanji.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0804820384"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780804820387"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 675,
+        "printType": "BOOK",
+        "categories": [
+          "Foreign Language Study"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 7,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=3ZHD9wdspXgC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=3ZHD9wdspXgC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=3ZHD9wdspXgC&dq=isbn:0804820384&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.co.uk/books?id=3ZHD9wdspXgC&dq=isbn:0804820384&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/A_Guide_to_Remembering_Japanese_Characte.html?hl=&id=3ZHD9wdspXgC"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=3ZHD9wdspXgC&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Master mnemonic aids for all 1,945 joyo kanji. A Guide To Remembering Japanese Characters is the first book in English to explain systematically and in detail the true origin of each of the General Use Characters."
+      }
+    }
+  ]
+}

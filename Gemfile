@@ -7,6 +7,7 @@ end
 
 # Grape API
 gem 'grape'
+gem 'httparty'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
